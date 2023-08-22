@@ -34,6 +34,19 @@
       font-weight: bold;
       color: #FFC107;
     }
+
+    #startButton {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 10px 20px;
+      background-color: #FFC107;
+      color: #000;
+      font-size: 1.5rem;
+      border: none;
+      cursor: pointer;
+    }
   </style>
   <link href="https://fonts.googleapis.com/css?family=Montserrat:700|Pacifico&display=swap" rel="stylesheet"> <!-- Modificación: agregar la fuente Pacifico -->
 </head>
@@ -43,6 +56,7 @@
   </audio>
   <canvas id="canvas"></canvas>
   <div id="text">Feliz cumpleaños Jairelis!</div> <!-- Modificación: agregar el texto en el centro -->
+  <button id="startButton">Iniciar música</button>
   
   <script>
     const canvas = document.getElementById('canvas');
@@ -115,10 +129,13 @@
 
     setInterval(createParticles, 1000);
     animate();
-    
-    // Reproducir la música automáticamente
+
+    // Reproducir la música al hacer clic en el botón
+    const startButton = document.getElementById('startButton');
     const birthdaySong = document.getElementById('birthdaySong');
-    birthdaySong.play();
+    startButton.addEventListener('click', () => {
+      birthdaySong.play();
+    });
   </script>
 </body>
 </html>
