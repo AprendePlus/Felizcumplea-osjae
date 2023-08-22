@@ -115,15 +115,13 @@
 
     setInterval(createParticles, 1000);
     animate();
-    
+
     // Reproducir la música al tocar la pantalla
-    const startPlayingMusic = () => {
+    document.addEventListener('touchstart', () => {
       const birthdaySong = document.getElementById('birthdaySong');
       birthdaySong.play();
       document.removeEventListener('touchstart', startPlayingMusic);
-    };
-    
-    document.addEventListener('touchstart', startPlayingMusic);
+    });
   </script>
 </body>
 </html>
