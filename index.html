@@ -21,7 +21,7 @@
       position: fixed;
       top: 0;
       left: 0;
-      z-index: -1;
+      z-index: -1; /* Colocar el canvas detrás del texto */
     }
 
     #text {
@@ -29,29 +29,22 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      font-family: 'Pacifico', cursive;
+      font-family: 'Pacifico', cursive; /* Modificación: agregar una fuente bonita */
       font-size: 6rem;
       font-weight: bold;
       color: #FFC107;
     }
   </style>
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:700|Pacifico&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:700|Pacifico&display=swap" rel="stylesheet"> <!-- Modificación: agregar la fuente Pacifico -->
 </head>
 <body>
   <audio id="birthdaySong" autoplay loop>
-  <source src="musica.mp3" type="audio/mpeg"> <!-- Aquí, "musica.mp3" es el nombre del archivo en la misma carpeta -->
-</audio>
+    <source src="musica.mp3" type="audio/mpeg"> <!-- Cambiar la ruta a la ubicación de tu archivo de música -->
+  </audio>
   <canvas id="canvas"></canvas>
-  <div id="text">Feliz cumpleaños Jairelis!</div>
+  <div id="text">Feliz cumpleaños Jairelis!</div> <!-- Modificación: agregar el texto en el centro -->
   
   <script>
-    const audio = document.getElementById('birthdaySong');
-
-    // Reproducir el audio una vez que la página esté completamente cargada
-    window.addEventListener('load', () => {
-      audio.play();
-    });
-
     const canvas = document.getElementById('canvas');
     const ctx = canvas.getContext('2d');
     canvas.width = window.innerWidth;
